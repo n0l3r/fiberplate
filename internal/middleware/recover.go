@@ -1,17 +1,18 @@
 package middleware
 
 import (
-	"github.com/n0l3r/fiberplate/pkg/logger"
 	"fmt"
 	"runtime/debug"
 
-	"github.com/gofiber/fiber/v2"
+	"github.com/n0l3r/fiberplate/pkg/logger"
+
+	"github.com/gofiber/fiber/v3"
 	"github.com/rs/zerolog"
 )
 
 // RecoverMiddleware will catch panic, log it, and return 500
 func RecoverMiddleware(logger *logger.Logger) fiber.Handler {
-	return func(c *fiber.Ctx) (err error) {
+	return func(c fiber.Ctx) (err error) {
 		defer func() {
 			if r := recover(); r != nil {
 

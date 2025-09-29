@@ -4,8 +4,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/gofiber/fiber/v3"
 	"github.com/n0l3r/fiberplate/pkg/envy"
-	"github.com/gofiber/fiber/v2"
 	"github.com/rs/zerolog"
 )
 
@@ -34,7 +34,7 @@ func createLogger(output *os.File, level zerolog.Level, humanReadable bool) *Log
 }
 
 // Extract logger from context
-func LoggerFromFiber(c *fiber.Ctx) zerolog.Logger {
+func LoggerFromFiber(c fiber.Ctx) zerolog.Logger {
 	l, ok := c.Locals(LoggerKey).(zerolog.Logger)
 	if ok {
 		return l
@@ -44,7 +44,7 @@ func LoggerFromFiber(c *fiber.Ctx) zerolog.Logger {
 
 // FiberMiddleware to add logger to context and log requests
 func FiberMiddleware(baseLogger *Logger) fiber.Handler {
-	return func(c *fiber.Ctx) error {
+	return func(c fiber.Ctx) error {
 		reqID := c.Get(fiber.HeaderXRequestID)
 		method := c.Method()
 		path := c.Path()

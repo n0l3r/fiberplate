@@ -3,7 +3,7 @@ package app
 import (
 	"github.com/n0l3r/fiberplate/internal/handler"
 
-	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v3"
 )
 
 // registerDevRoutes registers development routes.

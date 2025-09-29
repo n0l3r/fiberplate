@@ -1,12 +1,12 @@
 package responder
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v3"
 )
 
 // ErrorOutput holds error response info
 type ErrorOutput struct {
-	c                *fiber.Ctx
+	c                fiber.Ctx
 	Code             int                `json:"code"`
 	Data             []*ErrorOutputData `json:"data,omitempty"`
 	Message          string             `json:"message"`
@@ -24,7 +24,7 @@ type ErrorOutputData struct {
 }
 
 // NewHTTPError creates and initializes ErrorOutput
-func NewHTTPError(c *fiber.Ctx, code int, message string) *ErrorOutput {
+func NewHTTPError(c fiber.Ctx, code int, message string) *ErrorOutput {
 	if code == 0 {
 		code = fiber.StatusInternalServerError
 	}

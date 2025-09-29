@@ -1,12 +1,12 @@
 package responder
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v3"
 )
 
 // ResponseOutput holds success response info
 type ResponseOutput struct {
-	c            *fiber.Ctx
+	c            fiber.Ctx
 	Code         int    `json:"code" example:"200"`
 	Data         any    `json:"data"`
 	Message      string `json:"message" example:"OK"`
@@ -16,7 +16,7 @@ type ResponseOutput struct {
 }
 
 // NewHTTPSuccess creates a new ResponseOutput
-func NewHTTPSuccess(c *fiber.Ctx, code int, data any, message string) *ResponseOutput {
+func NewHTTPSuccess(c fiber.Ctx, code int, data any, message string) *ResponseOutput {
 	if message == "" {
 		message = "OK"
 	}
