@@ -1,0 +1,46 @@
+package route
+
+import (
+	"boilerplate/internal/config"
+	"boilerplate/internal/middleware"
+	"boilerplate/internal/service"
+	"boilerplate/pkg/logger"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/compress"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/helmet"
+)
+
+type Router struct {
+	AppCfg *config.AppCfg
+	Svc    *service.Service
+	Logger *logger.Logger
+}
+
+func NewRouter(opts ...Option) *Router {
+	r := &Router{}
+	for _, opt := range opts {
+		opt(r)
+	}
+	return r
+}
+
+func (r *Router) Setup() *fiber.App {
+	app := fiber.New()
+
+	app.Use(middleware.RequestIDMiddleware())
+	app.Use(middleware.RecoverMiddleware(r.Logger))
+	app.Use(helmet.New())
+	app.Use(compress.New())
+	app.Use(cors.New())
+	app.Use(logger.FiberMiddleware(r.Logger))
+
+	registerDevRoutes(r, app)
+
+	// Setup routes
+	v1 := app.Group("/api/v1")
+	_ = v1
+
+	return app
+}
