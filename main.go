@@ -1,18 +1,19 @@
 package main
 
 import (
-	"github.com/n0l3r/fiberplate/internal/config"
-	"github.com/n0l3r/fiberplate/internal/database"
-	"github.com/n0l3r/fiberplate/internal/repository"
-	"github.com/n0l3r/fiberplate/internal/route"
-	"github.com/n0l3r/fiberplate/internal/service"
-	"github.com/n0l3r/fiberplate/pkg/logger"
 	"context"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/n0l3r/fiberplate/internal/app"
+	"github.com/n0l3r/fiberplate/internal/config"
+	"github.com/n0l3r/fiberplate/internal/database"
+	"github.com/n0l3r/fiberplate/internal/repository"
+	"github.com/n0l3r/fiberplate/internal/service"
+	"github.com/n0l3r/fiberplate/pkg/logger"
 
 	"github.com/joho/godotenv"
 )
@@ -38,10 +39,10 @@ func main() {
 	repo := repository.NewRepository(dbConn)
 	services := service.NewService(repo)
 
-	rtr := route.NewRouter(
-		route.WithAppConfig(&cfg.App),
-		route.WithLogger(stdLog),
-		route.WithService(services),
+	rtr := app.NewRouter(
+		app.WithAppConfig(&cfg.App),
+		app.WithLogger(stdLog),
+		app.WithService(services),
 	)
 
 	app := rtr.Setup()
