@@ -1,10 +1,10 @@
 package route
 
 import (
-	"boilerplate/internal/config"
-	"boilerplate/internal/middleware"
-	"boilerplate/internal/service"
-	"boilerplate/pkg/logger"
+	"github.com/n0l3r/fiberplate/internal/config"
+	"github.com/n0l3r/fiberplate/internal/middleware"
+	"github.com/n0l3r/fiberplate/internal/service"
+	"github.com/n0l3r/fiberplate/pkg/logger"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"

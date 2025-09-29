@@ -1,7 +1,7 @@
 package config
 
 import (
-	"boilerplate/pkg/envy"
+	"github.com/n0l3r/fiberplate/pkg/envy"
 	"time"
 )
 

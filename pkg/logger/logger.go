@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"boilerplate/pkg/envy"
+	"github.com/n0l3r/fiberplate/pkg/envy"
 	"github.com/gofiber/fiber/v2"
 	"github.com/rs/zerolog"
 )

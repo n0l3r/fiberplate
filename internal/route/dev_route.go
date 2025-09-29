@@ -1,7 +1,7 @@
 package route
 
 import (
-	"boilerplate/internal/handler"
+	"github.com/n0l3r/fiberplate/internal/handler"
 
 	"github.com/gofiber/fiber/v2"
 )

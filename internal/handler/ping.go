@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"boilerplate/pkg/responder"
+	"github.com/n0l3r/fiberplate/pkg/responder"
 
 	"github.com/gofiber/fiber/v2"
 )

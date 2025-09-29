@@ -1,7 +1,7 @@
 package database
 
 import (
-	"boilerplate/internal/config"
+	"github.com/n0l3r/fiberplate/internal/config"
 	"fmt"
 
 	"github.com/jmoiron/sqlx"

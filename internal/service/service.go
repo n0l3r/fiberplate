@@ -1,6 +1,6 @@
 package service
 
-import "boilerplate/internal/repository"
+import "github.com/n0l3r/fiberplate/internal/repository"
 
 type Service struct{}
 

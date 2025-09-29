@@ -1,6 +1,6 @@
 package config
 
-import "boilerplate/pkg/envy"
+import "github.com/n0l3r/fiberplate/pkg/envy"
 
 // App is the configuration for the application.
 type AppCfg struct {

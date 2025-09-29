@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"boilerplate/pkg/logger"
+	"github.com/n0l3r/fiberplate/pkg/logger"
 	"fmt"
 	"runtime/debug"
 

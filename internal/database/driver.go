@@ -1,8 +1,8 @@
 package database
 
 import (
-	"boilerplate/internal/config"
-	"boilerplate/pkg/util"
+	"github.com/n0l3r/fiberplate/internal/config"
+	"github.com/n0l3r/fiberplate/pkg/util"
 )
 
 type Driver string

@@ -1,9 +1,9 @@
 package route
 
 import (
-	"boilerplate/internal/config"
-	"boilerplate/internal/service"
-	"boilerplate/pkg/logger"
+	"github.com/n0l3r/fiberplate/internal/config"
+	"github.com/n0l3r/fiberplate/internal/service"
+	"github.com/n0l3r/fiberplate/pkg/logger"
 )
 
 type Option func(*Router)

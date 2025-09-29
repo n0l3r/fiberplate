@@ -1,12 +1,12 @@
 package main
 
 import (
-	"boilerplate/internal/config"
-	"boilerplate/internal/database"
-	"boilerplate/internal/repository"
-	"boilerplate/internal/route"
-	"boilerplate/internal/service"
-	"boilerplate/pkg/logger"
+	"github.com/n0l3r/fiberplate/internal/config"
+	"github.com/n0l3r/fiberplate/internal/database"
+	"github.com/n0l3r/fiberplate/internal/repository"
+	"github.com/n0l3r/fiberplate/internal/route"
+	"github.com/n0l3r/fiberplate/internal/service"
+	"github.com/n0l3r/fiberplate/pkg/logger"
 	"context"
 	"log"
 	"os"

@@ -1,4 +1,4 @@
-module boilerplate
+module github.com/n0l3r/fiberplate
 
 go 1.25.0
 
